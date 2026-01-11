@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #faf3e0;
+  text-align: center;
+  padding: 20px;
+}
+ 
+h1 {
+  margin-bottom: 30px;
+}
+ 
+#bookshelf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  background: #d1a675 url('images/wood-texture.jpg');
+  padding: 20px;
+  border-radius: 10px;
+}
+ 
+.book {
+  width: 60px;
+  height: 200px;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 5px rgba(0,0,0,.3);
+  border-radius: 3px;
+  color: #fff;
+}
+ 
+.book:hover {
+  transform: scale(1.05);
+}
+ 
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+}
+ 
+.modal-content {
+  background: white;
+  padding: 20px;
+  margin: 5% auto;
+  width: 400px;
+  border-radius: 8px;
+}
+ 
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+ 
+.close {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
