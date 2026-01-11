@@ -1,0 +1,18 @@
+[
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "cover": "images/gatsby.jpg",
+    "synopsis": "A tragic story of love, ambition, and the American dream.",
+    "status": "finished",
+    "dateFinished": "2026-01-06"
+  },
+  {
+    "title": "A Study in Scarlet",
+    "author": "Arthur Conan Doyle",
+    "cover": "images/study.jpg",
+    "synopsis": "Sherlock Holmes meets Dr. Watson in their first mystery together.",
+    "status": "reading",
+    "dateFinished": ""
+  }
+]
