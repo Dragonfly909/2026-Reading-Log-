@@ -148,3 +148,17 @@ h1 {
   width: auto;
   pointer-events: none;
 }
+.decor-slot {
+  background: transparent !important;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+ 
+.decor-slot img {
+  max-height: 180px;
+  width: auto;
+  pointer-events: none;
+}
