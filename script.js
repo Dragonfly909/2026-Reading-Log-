@@ -1,4 +1,4 @@
-const TOTAL_SLOTS = 50; // Change to your yearly goal
+const TOTAL_SLOTS = 50; // Yearly goal
  
 async function loadBooks() {
   try {
@@ -15,15 +15,13 @@ async function loadBooks() {
  
         // DECOR item
         if (item.type && item.type.toLowerCase() === "decor") {
-    slot.classList.add('decor-slot');
-if (item.type && item.type.toLowerCase() === "decor") {
-    slot.classList.add('decor-slot');
-    if (item.decorClass) slot.classList.add(item.decorClass);
-    const img = document.createElement('img');
-    img.src = item.cover;
-    img.alt = item.title || 'Decor';
-    slot.appendChild(img);
-}
+          slot.classList.add('decor-slot');
+          if (item.decorClass) slot.classList.add(item.decorClass);
+          const img = document.createElement('img');
+          img.src = item.cover;
+          img.alt = item.title || 'Decor';
+          slot.appendChild(img);
+ 
         // BOOK item
         } else {
           slot.classList.add('book-filled');
@@ -62,7 +60,7 @@ function closeBook() {
   document.getElementById('bookModal').style.display = 'none';
 }
  
-// Close when clicking outside content
+// Close on outside click
 window.addEventListener('click', e => {
   const modal = document.getElementById('bookModal');
   if (e.target === modal) closeBook();
