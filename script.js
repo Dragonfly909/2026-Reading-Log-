@@ -1,4 +1,4 @@
-const TOTAL_SLOTS = 50; // Adjust for yearly goal
+const TOTAL_SLOTS = 50; // Change to your yearly goal
  
 async function loadBooks() {
   try {
@@ -13,31 +13,26 @@ async function loadBooks() {
       if (i < books.length) {
         const item = books[i];
  
-        // ===== DECOR ITEM =====
-      if (item.type === "decor") {
-    slot.classList.add('decor-slot');
-    const img = document.createElement('img');
-    img.src = item.cover;
-    img.alt = item.title || 'Decor';
-    slot.appendChild(img);
-} else {
-    slot.classList.add('book-filled');
-    slot.style.backgroundColor = getRandomColor();
-    slot.innerText = item.title;
-    slot.onclick = () => openBook(item);
-}
-        
-        // ===== BOOK ITEM =====
+        // DECOR
+        if (item.type && item.type.toLowerCase() === "decor") {
+          slot.classList.add('decor-slot');
+          const img = document.createElement('img');
+          img.src = item.cover;
+          img.alt = item.title || 'Decor';
+          slot.appendChild(img);
+ 
+        // BOOK
         } else {
           slot.classList.add('book-filled');
           slot.style.backgroundColor = getRandomColor();
-          slot.innerText = item.title;
+          slot.innerText = item.title || '';
           slot.onclick = () => openBook(item);
         }
       } 
       else {
-        // Empty placeholder
+        // EMPTY placeholder
         slot.classList.add('book-empty');
+        slot.innerText = '';
       }
  
       shelf.appendChild(slot);
@@ -55,8 +50,8 @@ function getRandomColor() {
 function openBook(book) {
   const modal = document.getElementById('bookModal');
   modal.style.display = 'block';
-  document.getElementById('cover').src = book.cover;
-  document.getElementById('title').innerText = book.title;
+  document.getElementById('cover').src = book.cover || '';
+  document.getElementById('title').innerText = book.title || '';
   document.getElementById('author').innerText = book.author || '';
   document.getElementById('synopsis').innerText = book.synopsis || '';
 }
@@ -65,19 +60,15 @@ function closeBook() {
   document.getElementById('bookModal').style.display = 'none';
 }
  
-// Close when clicking outside content
-window.addEventListener('click', function(event) {
+// Close on outside click
+window.addEventListener('click', e => {
   const modal = document.getElementById('bookModal');
-  if (event.target === modal) {
-    closeBook();
-  }
+  if (e.target === modal) closeBook();
 });
  
-// Close when pressing Escape
-window.addEventListener('keydown', function(e) {
-  if (e.key === "Escape") {
-    closeBook();
-  }
+// Close on Escape key
+window.addEventListener('keydown', e => {
+  if (e.key === "Escape") closeBook();
 });
  
 loadBooks();
