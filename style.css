@@ -134,20 +134,7 @@ h1 {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
-.decor-slot {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
- 
-.decor-slot img {
-  max-height: 180px;
-  width: auto;
-  pointer-events: none;
-}
+
 .decor-slot {
   background: transparent !important;
   border: none;
