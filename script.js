@@ -13,7 +13,7 @@ async function loadBooks() {
       if (i < books.length) {
         const item = books[i];
  
-        // DECOR item
+        // DECOR item from books.json
         if (item.type && item.type.toLowerCase() === "decor") {
           slot.classList.add('decor-slot');
           if (item.decorClass) slot.classList.add(item.decorClass);
@@ -21,15 +21,27 @@ async function loadBooks() {
           img.src = item.cover;
           img.alt = item.title || 'Decor';
           slot.appendChild(img);
+ 
+        // Regular BOOK item
         } else {
-          // BOOK item
           slot.classList.add('book-filled');
           slot.style.backgroundColor = getRandomColor();
           slot.innerText = item.title || '';
           slot.onclick = () => openBook(item);
+ 
+          // Automatically insert a PNG divider after every 5 books
+          if ((i + 1) % 5 === 0) {
+            const spacerSlot = document.createElement('div');
+            spacerSlot.classList.add('decor-slot');
+            const spacerImg = document.createElement('img');
+            spacerImg.src = 'images/plant.png'; // <--- change PNG here if you prefer candle/bookend
+            spacerImg.alt = 'Shelf Divider';
+            spacerSlot.appendChild(spacerImg);
+            shelf.appendChild(spacerSlot);
+          }
         }
       } else {
-        // EMPTY slot
+        // Empty placeholder
         slot.classList.add('book-empty');
         slot.innerText = '';
       }
@@ -59,13 +71,13 @@ function closeBook() {
   document.getElementById('bookModal').style.display = 'none';
 }
  
-// Close on outside click
+// Close modal when clicking outside
 window.addEventListener('click', e => {
   const modal = document.getElementById('bookModal');
   if (e.target === modal) closeBook();
 });
  
-// Close on Escape key
+// Close modal when pressing Escape
 window.addEventListener('keydown', e => {
   if (e.key === "Escape") closeBook();
 });
