@@ -18,8 +18,9 @@ async function loadBooks() {
         slot.innerText = book.title;
         slot.onclick = () => openBook(book);
       } else {
-        // Empty placeholder slot
+        // Empty slot — completely blank
         slot.classList.add('book-empty');
+        slot.innerText = '';
       }
  
       shelf.appendChild(slot);
@@ -47,7 +48,7 @@ function closeBook() {
   document.getElementById('bookModal').style.display = 'none';
 }
  
-// Close when clicking outside content
+// Close modal when clicking outside content
 window.addEventListener('click', function(event) {
   const modal = document.getElementById('bookModal');
   if (event.target === modal) {
@@ -55,11 +56,9 @@ window.addEventListener('click', function(event) {
   }
 });
  
-// Close with Escape key
+// Close modal when pressing Escape
 window.addEventListener('keydown', function(e) {
   if (e.key === "Escape") {
     closeBook();
   }
 });
- 
-loadBooks();
