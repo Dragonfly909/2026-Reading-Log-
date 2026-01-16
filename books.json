@@ -40,5 +40,6 @@
     "title": "Bookend Decor",
     "cover": "images/bookend1.png",
     "type": "decor"
+    "decorClass": "bookend"
   }
 ]
