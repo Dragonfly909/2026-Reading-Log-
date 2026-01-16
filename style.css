@@ -12,16 +12,25 @@ h1 {
   color: #4b3b2f;
 }
  
-/* ==== BOOKSHELF WRAPPER ==== */
+/* ==== MODERN WHITE BOOKCASE LOOK ==== */
 #bookshelf {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   justify-content: flex-start;
-  background-color: #ffffff; /* clean white shelf */
+  background-color: #ffffff !important; /* pure white bookcase */
   padding: 25px 15px;
-  border-radius: 12px;
-  box-shadow: inset 0 -4px 8px rgba(0,0,0,0.08); /* soft shadow for depth */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08), inset 0 -4px 8px rgba(0,0,0,0.05);
+  
+  /* horizontal plank lines for shelf rows */
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ffffff,
+    #ffffff 198px,
+    #e5e5e5 198px,
+    #e5e5e5 202px
+  );
 }
 
 
@@ -33,30 +42,26 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
   cursor: pointer;
   border-radius: 3px;
-  position: relative;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  transform-origin: bottom center;
+  margin: 2px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.25s ease;
 }
  
-/* ==== FILLED BOOK SPINES ==== */
 .book-filled {
   color: #fff;
-  font-size: 12px;
-  padding: 5px;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   letter-spacing: 1px;
-  font-weight: bold;
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.3), inset -4px 0 6px rgba(0,0,0,0.4);
-  background-image: linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.15) 100%);
+  font-size: 12px;
+  padding: 5px;
+  background-image: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.15) 100%);
 }
  
 .book-filled:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: inset 0 0 8px rgba(255,255,255,0.2), inset -4px 0 8px rgba(0,0,0,0.45), 0 4px 10px rgba(0,0,0,0.25);
+  transform: translateY(-5px);
 }
  
 /* ==== EMPTY PLACEHOLDERS ==== */
@@ -159,21 +164,16 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px; /* extra breathing room around decor */
-  margin: 4px;  /* space between decor and books */
+  padding: 8px;
+  margin: 4px;
 }
  
 .decor-slot img {
-  max-height: 140px; /* slightly smaller so decor feels natural */
+  max-height: 140px;
   width: auto;
-  pointer-events: none;
-}
- 
-/* Bookend styling - taller and anchored */
-.decor-slot.bookend {
-  justify-content: flex-end;
+  pointer-events: none; /* no unwanted clicks */
 }
  
 .decor-slot.bookend img {
-  max-height: 180px;
+  max-height: 180px; /* keep bookend slightly taller */
 }
