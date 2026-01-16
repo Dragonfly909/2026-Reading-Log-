@@ -74,7 +74,7 @@ h1 {
  
 /* Standard decor - smaller height for subtle look, aligned with book bottoms */
 .decor-slot img {
-  max-height: 80px;           /* decorative pieces slightly shorter */
+  max-height: 30px;           /* decorative pieces slightly shorter */
   width: auto;
   pointer-events: none;
   align-self: flex-end;        /* aligns bottom of image with the bottom of slot */
