@@ -1,4 +1,4 @@
-const TOTAL_SLOTS = 50; // Yearly goal
+const TOTAL_SLOTS = 50;
  
 async function loadBooks() {
   try {
@@ -6,23 +6,20 @@ async function loadBooks() {
     const books = await response.json();
     const shelf = document.getElementById('bookshelf');
  
+    console.log("Books loaded:", books);
+ 
     for (let i = 0; i < TOTAL_SLOTS; i++) {
       const slot = document.createElement('div');
       slot.className = 'book-slot';
  
       if (i < books.length) {
         const item = books[i];
- 
-        // DECOR item
         if (item.type && item.type.toLowerCase() === "decor") {
           slot.classList.add('decor-slot');
-          if (item.decorClass) slot.classList.add(item.decorClass);
           const img = document.createElement('img');
           img.src = item.cover;
           img.alt = item.title || 'Decor';
           slot.appendChild(img);
- 
-        // BOOK item
         } else {
           slot.classList.add('book-filled');
           slot.style.backgroundColor = getRandomColor();
@@ -30,15 +27,13 @@ async function loadBooks() {
           slot.onclick = () => openBook(item);
         }
       } else {
-        // EMPTY slot
         slot.classList.add('book-empty');
-        slot.innerText = '';
       }
  
       shelf.appendChild(slot);
     }
   } catch (error) {
-    console.error("Error loading books:", error);
+    console.error("Error loading or rendering shelf:", error);
   }
 }
  
@@ -60,13 +55,11 @@ function closeBook() {
   document.getElementById('bookModal').style.display = 'none';
 }
  
-// Close on outside click
 window.addEventListener('click', e => {
   const modal = document.getElementById('bookModal');
   if (e.target === modal) closeBook();
 });
  
-// Close on Escape key
 window.addEventListener('keydown', e => {
   if (e.key === "Escape") closeBook();
 });
