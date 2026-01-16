@@ -23,6 +23,11 @@
     "type": "book"
   },
   {
+    "title": "Candle Decor",
+    "cover": "images/candle.png",
+    "type": "decor"
+  },
+  {
     "title": "The Serpent & The Wings of Night",
     "author": "Carissa Broadbent",
     "cover": "images/TSWN.jpg",
