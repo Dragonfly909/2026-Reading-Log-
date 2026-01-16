@@ -51,26 +51,66 @@ h1 {
 .modal {
   display: none;
   position: fixed;
+  z-index: 1000;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(4px);
 }
  
 .modal-content {
-  background: white;
+  background: #fff;
   padding: 20px;
-  margin: 5% auto;
-  width: 400px;
-  border-radius: 8px;
+  margin: 50px auto;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
 }
  
 .modal-content img {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   margin-bottom: 15px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+ 
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+ 
+.modal-content h3 {
+  margin-top: 5px;
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: #666;
+}
+ 
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #333;
+  margin-top: 15px;
 }
  
 .close {
-  float: right;
-  font-size: 20px;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #555;
   cursor: pointer;
+}
+ 
+.close:hover {
+  color: #000;
+}
+ 
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
