@@ -1,7 +1,7 @@
 /* ==== GENERAL PAGE STYLING ==== */
 body {
   font-family: 'Georgia', serif;
-  background-color:#ffffff;
+  background-color: #f8f5f0;
   text-align: center;
   padding: 20px;
 }
@@ -12,22 +12,18 @@ h1 {
   color: #4b3b2f;
 }
  
-/* ==== MODERN WHITE IKEA-STYLE BOOKSHELF ==== */
+/* ==== MODERN WHITE IKEA BOOKSHELF ==== */
 #bookshelf {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   justify-content: flex-start;
- 
-  /* Modern clean white background */
-  background: #ffffff !important;
- 
-  /* Soft shadows for shelf depth */
+  background: #ffffff !important; /* clean modern white */
   padding: 25px 15px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.08), inset 0 -4px 8px rgba(0,0,0,0.05);
- 
-  /* Horizontal plank effect */
+  
+  /* subtle horizontal shelf lines */
   background-image: repeating-linear-gradient(
     to bottom,
     #ffffff,
@@ -72,61 +68,35 @@ h1 {
   border: 2px dashed rgba(0,0,0,0.1);
 }
  
-/* Standard decor - smaller height for subtle look, aligned with book bottoms */
-.decor-slot img {
-  max-height: 20px;           /* decorative pieces slightly shorter */
-  width: auto;
-  pointer-events: none;
-  align-self: flex-end;        /* aligns bottom of image with the bottom of slot */
-  margin-bottom: 0;            /* ensures sits flush to shelf baseline */
-}
- 
-/* Bookend decor - keep tall for balance, also aligned to bottom */
-.decor-slot.bookend img {
-  max-height: 100px;           /* close to book height */
-  width: auto;
-  pointer-events: none;
-  align-self: flex-end;        /* makes sure bookend sits on shelf bottom */
-  margin-bottom: 0;
-}
-
- 
-/* ==== BOOK SLOT BASE ==== */
-.book-slot {
-  width: 60px;
-  height: 200px;
+/* ==== DECOR STYLING ==== */
+.decor-slot {
+  background: transparent !important;
+  border: none;
+  box-shadow: none;
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* align PNG bottoms to shelf baseline */
   justify-content: center;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 3px;
-  margin: 2px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.25s ease;
+  padding: 8px;
+  margin: 0 12px; /* space between decor and books */
+  height: 140px; /* shorter than books */
 }
  
-.book-filled {
-  color: #fff;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  letter-spacing: 1px;
-  font-size: 12px;
-  padding: 5px;
-  background-image: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.15) 100%);
+.decor-slot img {
+  max-height: 80px; /* smaller decor image */
+  width: auto;
+  pointer-events: none;
 }
  
-.book-filled:hover {
-  transform: translateY(-5px);
+/* ==== BOOKEND SPECIAL STYLING ==== */
+.decor-slot.bookend {
+  height: 200px; /* matches books */
 }
  
-/* ==== EMPTY PLACEHOLDERS ==== */
-.book-empty {
-  background-color: rgba(255,255,255,0.15);
-  border: 2px dashed rgba(0,0,0,0.1);
+.decor-slot.bookend img {
+  max-height: 180px; /* tall bookend */
 }
  
-/* ==== BOOK MODAL ==== */
+/* ==== MODAL ==== */
 .modal {
   display: none;
   position: fixed;
@@ -192,44 +162,8 @@ h1 {
   color: #000;
 }
  
-/* ==== ANIMATIONS ==== */
+/* ==== ANIMATION ==== */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
-}
-
-.decor-slot {
-  background: transparent !important;
-  border: none;
-  box-shadow: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
- 
-.decor-slot img {
-  max-height: 180px;
-  width: auto;
-  pointer-events: none;
-}
-/* ==== Decor Styling & Spacing ==== */
-.decor-slot {
-  background: transparent !important;
-  border: none;
-  box-shadow: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  margin: 4px;
-}
- 
-.decor-slot img {
-  max-height: 140px;
-  width: auto;
-  pointer-events: none; /* no unwanted clicks */
-}
- 
-.decor-slot.bookend img {
-  max-height: 180px; /* keep bookend slightly taller */
 }
