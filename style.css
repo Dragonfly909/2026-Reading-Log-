@@ -149,3 +149,29 @@ h1 {
   width: auto;
   pointer-events: none;
 }
+/* ==== Decor Styling & Spacing ==== */
+.decor-slot {
+  background: transparent !important;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px; /* extra breathing room around decor */
+  margin: 4px;  /* space between decor and books */
+}
+ 
+.decor-slot img {
+  max-height: 140px; /* slightly smaller so decor feels natural */
+  width: auto;
+  pointer-events: none;
+}
+ 
+/* Bookend styling - taller and anchored */
+.decor-slot.bookend {
+  justify-content: flex-end;
+}
+ 
+.decor-slot.bookend img {
+  max-height: 180px;
+}
