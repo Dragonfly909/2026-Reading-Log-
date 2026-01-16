@@ -13,7 +13,7 @@ async function loadBooks() {
       if (i < books.length) {
         const item = books[i];
  
-        // DECOR
+        // DECOR item
         if (item.type && item.type.toLowerCase() === "decor") {
           slot.classList.add('decor-slot');
           const img = document.createElement('img');
@@ -21,16 +21,15 @@ async function loadBooks() {
           img.alt = item.title || 'Decor';
           slot.appendChild(img);
  
-        // BOOK
+        // BOOK item
         } else {
           slot.classList.add('book-filled');
           slot.style.backgroundColor = getRandomColor();
           slot.innerText = item.title || '';
           slot.onclick = () => openBook(item);
         }
-      } 
-      else {
-        // EMPTY placeholder
+      } else {
+        // EMPTY slot
         slot.classList.add('book-empty');
         slot.innerText = '';
       }
@@ -60,7 +59,7 @@ function closeBook() {
   document.getElementById('bookModal').style.display = 'none';
 }
  
-// Close on outside click
+// Close when clicking outside content
 window.addEventListener('click', e => {
   const modal = document.getElementById('bookModal');
   if (e.target === modal) closeBook();
