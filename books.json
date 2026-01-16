@@ -23,4 +23,9 @@
     "status": "reading",
     "dateFinished": ""
   }
+  {
+    "title": "Plant Decor",
+    "cover": "images/plant.png",
+    "type": "decor"
+},
 ]
