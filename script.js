@@ -16,6 +16,8 @@ async function loadBooks() {
         // DECOR item
         if (item.type && item.type.toLowerCase() === "decor") {
     slot.classList.add('decor-slot');
+if (item.type && item.type.toLowerCase() === "decor") {
+    slot.classList.add('decor-slot');
     if (item.decorClass) slot.classList.add(item.decorClass);
     const img = document.createElement('img');
     img.src = item.cover;
