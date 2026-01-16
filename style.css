@@ -18,11 +18,13 @@ h1 {
   flex-wrap: wrap;
   gap: 8px;
   justify-content: flex-start;
-  background: #d6b482 url('images/wood-texture.jpg') center/cover;
+  background-color: #ffffff; /* clean white shelf */
   padding: 25px 15px;
   border-radius: 12px;
-  box-shadow: inset 0 -4px 8px rgba(0,0,0,0.2);
+  box-shadow: inset 0 -4px 8px rgba(0,0,0,0.08); /* soft shadow for depth */
 }
+
+
  
 /* ==== BOOK SLOT BASE ==== */
 .book-slot {
