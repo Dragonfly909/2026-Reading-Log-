@@ -12,18 +12,22 @@ h1 {
   color: #4b3b2f;
 }
  
-/* ==== MODERN WHITE BOOKCASE LOOK ==== */
+/* ==== MODERN WHITE IKEA-STYLE BOOKSHELF ==== */
 #bookshelf {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   justify-content: flex-start;
-  background: #ffffff !important; /* clean modern white */
+ 
+  /* Modern clean white background */
+  background: #ffffff !important;
+ 
+  /* Soft shadows for shelf depth */
   padding: 25px 15px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.08), inset 0 -4px 8px rgba(0,0,0,0.05);
-  
-  /* faint horizontal shelf plank lines */
+ 
+  /* Horizontal plank effect */
   background-image: repeating-linear-gradient(
     to bottom,
     #ffffff,
@@ -32,7 +36,63 @@ h1 {
     #e5e5e5 202px
   );
 }
-
+ 
+/* ==== BOOK SLOT BASE ==== */
+.book-slot {
+  width: 60px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 3px;
+  margin: 2px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.25s ease;
+}
+ 
+/* ==== FILLED BOOK SPINES ==== */
+.book-filled {
+  color: #fff;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding: 5px;
+  background-image: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.15) 100%);
+}
+ 
+.book-filled:hover {
+  transform: translateY(-5px);
+}
+ 
+/* ==== EMPTY PLACEHOLDERS ==== */
+.book-empty {
+  background-color: rgba(255,255,255,0.15);
+  border: 2px dashed rgba(0,0,0,0.1);
+}
+ 
+/* ==== DECOR STYLING ==== */
+.decor-slot {
+  background: transparent !important;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin: 4px;
+}
+ 
+.decor-slot img {
+  max-height: 140px;
+  width: auto;
+  pointer-events: none;
+}
+ 
+.decor-slot.bookend img {
+  max-height: 180px;
+}
 
  
 /* ==== BOOK SLOT BASE ==== */
