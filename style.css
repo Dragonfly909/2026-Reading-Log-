@@ -1,88 +1,77 @@
-/* Tracker bookshelf slot styles */
-.book-slot {
-  width: 60px;
-  height: 200px;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 3px;
-  margin: 5px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,.2);
-  transition: transform 0.2s ease, background-color 0.4s ease;
-}
- 
-.book-filled {
-  color: #fff;
-}
- 
-.book-filled:hover {
-  transform: translateY(-5px);
-}
- 
-.book-empty {
-  background-color: #ddd;
-  border: 2px dashed #bbb;
-  cursor: default;
-}
+/* ==== GENERAL PAGE STYLING ==== */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #faf3e0;
+  font-family: 'Georgia', serif;
+  background-color: #f8f5f0;
   text-align: center;
   padding: 20px;
 }
  
 h1 {
   margin-bottom: 30px;
+  font-size: 2rem;
+  color: #4b3b2f;
 }
  
+/* ==== BOOKSHELF WRAPPER ==== */
 #bookshelf {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  background: #d1a675 url('images/wood-texture.jpg');
-  background-size: cover;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: inset 0 -10px 20px rgba(0,0,0,0.3);
+  gap: 8px;
+  justify-content: flex-start;
+  background: #d6b482 url('images/wood-texture.jpg') center/cover;
+  padding: 25px 15px;
+  border-radius: 12px;
+  box-shadow: inset 0 -4px 8px rgba(0,0,0,0.2);
 }
  
-.book {
+/* ==== BOOK SLOT BASE ==== */
+.book-slot {
   width: 60px;
   height: 200px;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-weight: bold;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  cursor: pointer;
   border-radius: 3px;
-  box-shadow: 
-    inset 0 0 8px rgba(255,255,255,0.3), 
-    inset -5px 0 8px rgba(0,0,0,0.4),
-    2px 2px 5px rgba(0,0,0,.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transform-origin: bottom center;
 }
  
-.book:hover {
-  transform: translateY(-10px) rotate(-2deg);
-  box-shadow: 
-    inset 0 0 8px rgba(255,255,255,0.3), 
-    inset -5px 0 8px rgba(0,0,0,0.4),
-    4px 6px 12px rgba(0,0,0,.6);
+/* ==== FILLED BOOK SPINES ==== */
+.book-filled {
+  color: #fff;
+  font-size: 12px;
+  padding: 5px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 1px;
+  font-weight: bold;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3), inset -4px 0 6px rgba(0,0,0,0.4);
+  background-image: linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.15) 100%);
 }
  
+.book-filled:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: inset 0 0 8px rgba(255,255,255,0.2), inset -4px 0 8px rgba(0,0,0,0.45), 0 4px 10px rgba(0,0,0,0.25);
+}
+ 
+/* ==== EMPTY PLACEHOLDERS ==== */
+.book-empty {
+  background-color: rgba(255,255,255,0.15);
+  border: 2px dashed rgba(0,0,0,0.1);
+}
+ 
+/* ==== BOOK MODAL ==== */
 .modal {
   display: none;
   position: fixed;
   z-index: 1000;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0,0,0,0.65);
   backdrop-filter: blur(4px);
 }
@@ -140,45 +129,8 @@ h1 {
   color: #000;
 }
  
+/* ==== ANIMATIONS ==== */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
-}
-#bookshelf {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: flex-start;
-  background: #d7b894 url('images/wood-texture.jpg') center/cover;
-  padding: 15px;
-  border-radius: 10px;
-}
- 
-.book-slot {
-  width: 60px;
-  height: 200px;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 3px;
-  margin: 2px;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
- 
-.book-filled {
-  color: #fff;
-}
- 
-.book-filled:hover {
-  transform: translateY(-5px);
-}
- 
-.book-empty {
-  background-color: transparent;
-  border: 2px solid rgba(0,0,0,0.15);
 }
