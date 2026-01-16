@@ -1,16 +1,33 @@
-async function loadBooks() {
-  const response = await fetch('books.json');
-  const books = await response.json();
-  const shelf = document.getElementById('bookshelf');
+const TOTAL_SLOTS = 50; // Change this for your goal number of books
  
-  books.forEach((book) => {
-    const bookDiv = document.createElement('div');
-    bookDiv.className = 'book';
-    bookDiv.style.backgroundColor = getRandomColor();
-    bookDiv.innerText = book.title;
-    bookDiv.onclick = () => openBook(book);
-    shelf.appendChild(bookDiv);
-  });
+async function loadBooks() {
+  try {
+    const response = await fetch('books.json');
+    const books = await response.json();
+    const shelf = document.getElementById('bookshelf');
+ 
+    for (let i = 0; i < TOTAL_SLOTS; i++) {
+      const bookDiv = document.createElement('div');
+      bookDiv.className = 'book-slot';
+ 
+      if (i < books.length) {
+        // Filled slot
+        const book = books[i];
+        bookDiv.classList.add('book-filled');
+        bookDiv.style.backgroundColor = getRandomColor();
+        bookDiv.innerText = book.title;
+        bookDiv.onclick = () => openBook(book);
+      } else {
+        // Empty slot
+        bookDiv.classList.add('book-empty');
+        bookDiv.innerText = '';
+      }
+ 
+      shelf.appendChild(bookDiv);
+    }
+  } catch (error) {
+    console.error("Error loading books:", error);
+  }
 }
  
 function getRandomColor() {
@@ -23,7 +40,7 @@ function openBook(book) {
   document.getElementById('cover').src = book.cover;
   document.getElementById('title').innerText = book.title;
   document.getElementById('author').innerText = book.author;
-  document.getElementById('synopsis').innerText = book.synopsis;
+  document.getElementById('synopsis').innerText = book.synopsis || '';
 }
  
 function closeBook() {
