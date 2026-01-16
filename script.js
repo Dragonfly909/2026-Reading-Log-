@@ -1,4 +1,4 @@
-const TOTAL_SLOTS = 50; // Adjust for your yearly goal
+const TOTAL_SLOTS = 50; // Adjust for yearly goal
  
 async function loadBooks() {
   try {
@@ -11,16 +11,27 @@ async function loadBooks() {
       slot.className = 'book-slot';
  
       if (i < books.length) {
-        // Filled slot
-        const book = books[i];
-        slot.classList.add('book-filled');
-        slot.style.backgroundColor = getRandomColor();
-        slot.innerText = book.title;
-        slot.onclick = () => openBook(book);
-      } else {
-        // Empty slot — completely blank
+        const item = books[i];
+ 
+        // ===== DECOR ITEM =====
+        if (item.type === "decor") {
+          slot.classList.add('decor-slot');
+          const img = document.createElement('img');
+          img.src = item.cover;
+          img.alt = item.title || 'Decor';
+          slot.appendChild(img);
+        
+        // ===== BOOK ITEM =====
+        } else {
+          slot.classList.add('book-filled');
+          slot.style.backgroundColor = getRandomColor();
+          slot.innerText = item.title;
+          slot.onclick = () => openBook(item);
+        }
+      } 
+      else {
+        // Empty placeholder
         slot.classList.add('book-empty');
-        slot.innerText = '';
       }
  
       shelf.appendChild(slot);
@@ -40,7 +51,7 @@ function openBook(book) {
   modal.style.display = 'block';
   document.getElementById('cover').src = book.cover;
   document.getElementById('title').innerText = book.title;
-  document.getElementById('author').innerText = book.author;
+  document.getElementById('author').innerText = book.author || '';
   document.getElementById('synopsis').innerText = book.synopsis || '';
 }
  
@@ -48,7 +59,7 @@ function closeBook() {
   document.getElementById('bookModal').style.display = 'none';
 }
  
-// Close modal when clicking outside content
+// Close when clicking outside content
 window.addEventListener('click', function(event) {
   const modal = document.getElementById('bookModal');
   if (event.target === modal) {
@@ -56,7 +67,7 @@ window.addEventListener('click', function(event) {
   }
 });
  
-// Close modal when pressing Escape
+// Close when pressing Escape
 window.addEventListener('keydown', function(e) {
   if (e.key === "Escape") {
     closeBook();
