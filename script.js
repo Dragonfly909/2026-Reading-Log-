@@ -14,12 +14,18 @@ async function loadBooks() {
         const item = books[i];
  
         // ===== DECOR ITEM =====
-        if (item.type === "decor") {
-          slot.classList.add('decor-slot');
-          const img = document.createElement('img');
-          img.src = item.cover;
-          img.alt = item.title || 'Decor';
-          slot.appendChild(img);
+      if (item.type === "decor") {
+    slot.classList.add('decor-slot');
+    const img = document.createElement('img');
+    img.src = item.cover;
+    img.alt = item.title || 'Decor';
+    slot.appendChild(img);
+} else {
+    slot.classList.add('book-filled');
+    slot.style.backgroundColor = getRandomColor();
+    slot.innerText = item.title;
+    slot.onclick = () => openBook(item);
+}
         
         // ===== BOOK ITEM =====
         } else {
