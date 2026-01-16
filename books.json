@@ -1,11 +1,17 @@
 [
   {
-    "title": "Breathe With Me",
+    "title": "Breathe with Me",
     "author": "Becka Mack",
-    "cover": "images/209559156.jpg",
-    "synopsis": "Book 5, \"Playing For Keeps\" — Cara and Emmett's story. A tale of love, trust, and second chances.",
+    "cover": "images/breathe.png",
+    "synopsis": "A heartfelt romance about love, growth, and second chances.",
     "status": "finished",
-    "dateFinished": "2026-01-11"
+    "dateFinished": "2026-01-11",
+    "type": "book"
+  },
+  {
+    "title": "Plant Decor",
+    "cover": "images/plant.png",
+    "type": "decor"
   },
   {
     "title": "The Last Letter",
@@ -13,7 +19,13 @@
     "cover": "images/TLL.jpg",
     "synopsis": "",
     "status": "finished",
-    "dateFinished": "2026-01-15"
+    "dateFinished": "2026-01-15",
+    "type": "book"
+  },
+  {
+    "title": "Candle Decor",
+    "cover": "images/candle.png",
+    "type": "decor"
   },
   {
     "title": "The Serpent & The Wings of Night",
@@ -21,11 +33,12 @@
     "cover": "images/TSWN.jpg",
     "synopsis": "",
     "status": "reading",
-    "dateFinished": ""
-  }
+    "dateFinished": "",
+    "type": "book"
+  },
   {
-    "title": "Plant Decor",
-    "cover": "images/plant.png",
+    "title": "Bookend Decor",
+    "cover": "images/bookend.png",
     "type": "decor"
-},
+  }
 ]
