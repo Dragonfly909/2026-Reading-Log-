@@ -18,12 +18,12 @@ h1 {
   flex-wrap: wrap;
   gap: 8px;
   justify-content: flex-start;
-  background-color: #ffffff !important; /* pure white bookcase */
+  background: #ffffff !important; /* clean modern white */
   padding: 25px 15px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0,0,0,0.08), inset 0 -4px 8px rgba(0,0,0,0.05);
   
-  /* horizontal plank lines for shelf rows */
+  /* faint horizontal shelf plank lines */
   background-image: repeating-linear-gradient(
     to bottom,
     #ffffff,
