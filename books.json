@@ -1,70 +1,26 @@
-const TOTAL_SLOTS = 50; // Yearly goal
- 
-async function loadBooks() {
-  try {
-    const response = await fetch('books.json');
-    const books = await response.json();
-    const shelf = document.getElementById('bookshelf');
- 
-    for (let i = 0; i < TOTAL_SLOTS; i++) {
-      const slot = document.createElement('div');
-      slot.className = 'book-slot';
- 
-      if (i < books.length) {
-        const item = books[i];
-        // BOOK item only
-        slot.classList.add('book-filled');
-        slot.style.backgroundColor = getRandomColor();
-        slot.innerText = item.title || '';
-        slot.onclick = () => openBook(item);
-      } else {
-        // Empty placeholder
-        slot.classList.add('book-empty');
-        slot.innerText = '';
-      }
- 
-      shelf.appendChild(slot);
-    }
-  } catch (error) {
-    console.error("Error loading or rendering shelf:", error);
+[
+  {
+    "title": "Breathe with Me",
+    "author": "Becka Mack",
+    "cover": "images/209559156.jpg",
+    "synopsis": "A heartfelt romance about love, growth, and second chances.",
+    "status": "finished",
+    "dateFinished": "2026-01-11"
+  },
+  {
+    "title": "The Last Letter",
+    "author": "Rebecca Yarros",
+    "cover": "images/TLL.jpg",
+    "synopsis": "",
+    "status": "finished",
+    "dateFinished": "2026-01-15"
+  },
+  {
+    "title": "The Serpent & The Wings of Night",
+    "author": "Carissa Broadbent",
+    "cover": "images/TSWN.jpg",
+    "synopsis": "",
+    "status": "reading",
+    "dateFinished": ""
   }
-}
- 
-function getRandomColor() {
-  const colors = [
-    '#f39c12',
-    '#8e44ad',
-    '#3498db',
-    '#27ae60',
-    '#e67e22',
-    '#9b59b6',
-    '#c0392b'
-  ];
-  return colors[Math.floor(Math.random() * colors.length)];
-}
- 
-function openBook(book) {
-  const modal = document.getElementById('bookModal');
-  modal.style.display = 'block';
-  document.getElementById('cover').src = book.cover || '';
-  document.getElementById('title').innerText = book.title || '';
-  document.getElementById('author').innerText = book.author || '';
-  document.getElementById('synopsis').innerText = book.synopsis || '';
-}
- 
-function closeBook() {
-  document.getElementById('bookModal').style.display = 'none';
-}
- 
-// Close modal when clicking outside
-window.addEventListener('click', e => {
-  const modal = document.getElementById('bookModal');
-  if (e.target === modal) closeBook();
-});
- 
-// Close modal when pressing Escape
-window.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeBook();
-});
- 
-loadBooks();
+]
