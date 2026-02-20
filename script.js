@@ -12,34 +12,11 @@ async function loadBooks() {
  
       if (i < books.length) {
         const item = books[i];
- 
-        // DECOR item from books.json
-        if (item.type && item.type.toLowerCase() === "decor") {
-          slot.classList.add('decor-slot');
-          if (item.decorClass) slot.classList.add(item.decorClass);
-          const img = document.createElement('img');
-          img.src = item.cover;
-          img.alt = item.title || 'Decor';
-          slot.appendChild(img);
- 
-        // Regular BOOK item
-        } else {
-          slot.classList.add('book-filled');
-          slot.style.backgroundColor = getRandomColor();
-          slot.innerText = item.title || '';
-          slot.onclick = () => openBook(item);
- 
-          // Automatically insert a PNG divider after every 5 books
-          if ((i + 1) % 5 === 0) {
-            const spacerSlot = document.createElement('div');
-            spacerSlot.classList.add('decor-slot');
-            const spacerImg = document.createElement('img');
-            spacerImg.src = 'images/plant.png'; // <--- change PNG here if you prefer candle/bookend
-            spacerImg.alt = 'Shelf Divider';
-            spacerSlot.appendChild(spacerImg);
-            shelf.appendChild(spacerSlot);
-          }
-        }
+        // BOOK item only
+        slot.classList.add('book-filled');
+        slot.style.backgroundColor = getRandomColor();
+        slot.innerText = item.title || '';
+        slot.onclick = () => openBook(item);
       } else {
         // Empty placeholder
         slot.classList.add('book-empty');
@@ -54,7 +31,15 @@ async function loadBooks() {
 }
  
 function getRandomColor() {
-  const colors = ['#f39c12', '#8e44ad', '#3498db', '#27ae60', '#e67e22', '#9b59b6', '#c0392b'];
+  const colors = [
+    '#f39c12',
+    '#8e44ad',
+    '#3498db',
+    '#27ae60',
+    '#e67e22',
+    '#9b59b6',
+    '#c0392b'
+  ];
   return colors[Math.floor(Math.random() * colors.length)];
 }
  
@@ -79,7 +64,7 @@ window.addEventListener('click', e => {
  
 // Close modal when pressing Escape
 window.addEventListener('keydown', e => {
-  if (e.key === "Escape") closeBook();
+  if (e.key === 'Escape') closeBook();
 });
  
 loadBooks();
