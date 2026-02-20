@@ -28,6 +28,17 @@ async function loadBooks() {
           slot.style.backgroundColor = getRandomColor();
           slot.innerText = item.title || '';
           slot.onclick = () => openBook(item);
+ 
+          // Automatically insert a PNG divider after every 5 books
+          if ((i + 1) % 5 === 0) {
+            const spacerSlot = document.createElement('div');
+            spacerSlot.classList.add('decor-slot');
+            const spacerImg = document.createElement('img');
+            spacerImg.src = 'images/plant.png'; // <--- change PNG here if you prefer candle/bookend
+            spacerImg.alt = 'Shelf Divider';
+            spacerSlot.appendChild(spacerImg);
+            shelf.appendChild(spacerSlot);
+          }
         }
       } else {
         // Empty placeholder
