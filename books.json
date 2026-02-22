@@ -39,7 +39,7 @@
     "status": "finished",
     "dateFinished": "2026-02-02"
   },
-    {
+  {
     "title": "Intersect",
     "author": "Elle O'Roark",
     "cover": "images/intersect.jpg",
@@ -47,7 +47,7 @@
     "status": "finished",
     "dateFinished": "2026-02-06"
   },
-    {
+  {
     "title": "The Time Traveler's Wife",
     "author": "Audrey Niffenegger",
     "cover": "images/traveler.jpg",
@@ -55,12 +55,12 @@
     "status": "reading",
     "dateFinished": ""
   },
-     {
-    "title": "The Duke and I ",
+  {
+    "title": "The Duke and I",
     "author": "Julia Quinn",
     "cover": "images/duke.jpg",
     "synopsis": "",
     "status": "reading",
     "dateFinished": ""
-  },
+  }
 ]
