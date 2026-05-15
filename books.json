@@ -62,45 +62,44 @@
     "synopsis": "",
     "status": "reading",
     "dateFinished": ""
+  },
+  {
+    "title": "Lie to Me",
+    "author": "Molly McAdams",
+    "cover": "images/lie.jpg",
+    "synopsis": "A guarded woman's life is upended by a persistent, alluring cop who chips away at her icy defenses, even as her dark past threatens their bond.",
+    "status": "finished",
+    "dateFinished": "2026-02"
+  },
+  {
+    "title": "Older",
+    "author": "Jennifer Hartmann",
+    "cover": "images/older.jpg",
+    "synopsis": "A forbidden, emotional age-gap romance about Halley, an abused young woman seeking an escape, and Reed, an older man she meets at a lakeside.",
+    "status": "finished",
+    "dateFinished": "2026-03"
+  },
+  {
+    "title": "Archer's Voice",
+    "author": "Mia Sheridan",
+    "cover": "images/archer.jpg",
+    "synopsis": "",
+    "status": "finished",
+    "dateFinished": "2026-04"
+  },
+  {
+    "title": "Under Your Scars",
+    "author": "Ariel N. Anderson",
+    "cover": "images/under.jpg",
+    "synopsis": "A tragedy.",
+    "status": "finished",
+    "dateFinished": "2026-04/05"
+  },
+  {
+    "title": "Every Breath",
+    "author": "Nicholas Sparks",
+    "cover": "images/every.jpg",
+    "synopsis": "",
+    "status": "finished",
+    "dateFinished": "2026-05"
   }
-  {
-  "title": "Lie to Me",
-  "author": "Molly McAdams",
-  "cover": "images/lie.jpg",
-  "synopsis": "A guarded woman's life is upended by a persistent, alluring cop who chips away at her icy defenses, even as her dark past threatens their bond.",
-  "status": "finished",
-  "dateFinished": "2026-02"
-}
-{
-  "title": "Older",
-  "author": "Jennifer Hartmann",
-  "cover": "images/older.jpg",
-  "synopsis": "A forbidden, emotional age-gap romance about Halley, an abused young woman seeking an escape, and Reed, an older man she meets at a lakeside.",
-  "status": "finished",
-  "dateFinished": "March 2026"
-}
-  {
-  "title": "Archer's Voice",
-  "author": "Mia Sheridan",
-  "cover": "images/archer.jpg",
-  "synopsis": "",
-  "status": "finished",
-  "dateFinished": "April 2026"
-}
-  {
-  "title": "Under Your Scars",
-  "author": "Ariel N. Anderson",
-  "cover": "images/under.jpg",
-  "synopsis": "A tragedy.",
-  "status": "finished",
-  "dateFinished": "April/May 2026"
-}
-  {
-  "title": "Every Breath",
-  "author": "Nicholas Sparks",
-  "cover": "images/every.jpg",
-  "synopsis": "",
-  "status": "finished",
-  "dateFinished": "May 2026"
-}
-]
