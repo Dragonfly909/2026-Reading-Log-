@@ -105,11 +105,58 @@
   },
   {
   "title": "The Simple Wild",
-  "author": "K.A. Tucker
-    ",
+  "author": "K.A. Tucker",
   "cover": "images/simplewild.jpg",
   "synopsis": "",
   "status": "finished",
   "dateFinished": "2026-06"
+},
+  {
+  "title": "Wild at Heart",
+  "author": "K.A. Tucker",
+  "cover": "images/wildatheart.jpg",
+  "synopsis": "",
+  "status": "finished",
+  "dateFinished": "2026-06"
+},
+  {
+  "title": "Wild Love",
+  "author": "Elsie Silver",
+  "cover": "images/wildlove.jpg",
+  "synopsis": "",
+  "status": "finished",
+  "dateFinished": "2026-07"
+},
+  {
+  "title": "Wild Eyes",
+  "author": "Elsie Silver",
+  "cover": "images/wildeyes.jpg",
+  "synopsis": "",
+  "status": "finished",
+  "dateFinished": "2026-07"
+},
+  {
+  "title": "Wild Side",
+  "author": "Elsie Silver",
+  "cover": "images/wildside.jpg",
+  "synopsis": "",
+  "status": "finished",
+  "dateFinished": "2026-07"
+},
+  {
+  "title": "Wild Card",
+  "author": "Elsie Silver",
+  "cover": "images/wildcard.jpg",
+  "synopsis": "",
+  "status": "finished",
+  "dateFinished": "2026-08"
+},
+  {
+  "title": "Lights Out",
+  "author": "Navessa Allen",
+  "cover": "images/lightsout.jpg",
+  "synopsis": "",
+  "status": "finished",
+  "dateFinished": "2026-08"
 }
 ]
